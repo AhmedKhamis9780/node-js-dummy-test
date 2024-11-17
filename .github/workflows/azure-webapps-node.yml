@@ -50,8 +50,7 @@ jobs:
         #npm run test --if-present
 
 
-    - name: 'Add web.config for Azure'
-      run: cp web.config build/  # Copy web.config to the build directory
+ 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
