@@ -32,7 +32,8 @@ permissions:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
 
@@ -68,7 +69,8 @@ jobs:
   #     uses: actions/download-artifact@v3
   #     with:
   #       name: node-app
-
+    - name: 'Add web.config for Azure'
+      run: cp web.config build/  # Copy web.config to the build directory
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
